@@ -7,7 +7,7 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">MerchMatrix</a>
+    <Link to={'/'} className="btn btn-ghost text-xl">MerchMatrix</Link>
   </div>
   <div className="flex-none">
     <div className="dropdown dropdown-end">
