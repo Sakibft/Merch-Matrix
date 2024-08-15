@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
  
 
 const Navbar = () => {
@@ -38,7 +40,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-    <div className="dropdown dropdown-end">
+    <div className="dropdown dropdown-end ">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img
@@ -58,7 +60,9 @@ const Navbar = () => {
         <li><a>Settings</a></li>
         <li><a>Logout</a></li>
       </ul>
+     
     </div>
+  <Link to={'/login'}>  <button className="btn">Login</button></Link>
   </div>
 </div>
         </div>

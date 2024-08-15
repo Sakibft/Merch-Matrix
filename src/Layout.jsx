@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Shared/Navbar";
+import Register from "./Register";
+ 
 
  
 
@@ -10,8 +12,7 @@ const Layout = () => {
           <Navbar></Navbar>
           </div>
             <Outlet></Outlet>
-            <h1>footer</h1>
-        </div>
+         </div>
     );
 };
 
