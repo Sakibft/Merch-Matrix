@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "./Shared/Navbar";
 
  
 
 const Layout = () => {
     return (
         <div>
-            <h1 className="font-bold text-4xl text-red-800">nab</h1>
-            <button className="btn btn-primary">click me </button>
+          <div className="container mx-auto">
+          <Navbar></Navbar>
+          </div>
             <Outlet></Outlet>
             <h1>footer</h1>
         </div>
