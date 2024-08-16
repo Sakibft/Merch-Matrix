@@ -8,10 +8,12 @@ import Register from "./Register";
 const Layout = () => {
     return (
         <div>
-          <div className="bg-black" >
+          
           <Navbar></Navbar>
-          </div>
+          
+            <div>
             <Outlet></Outlet>
+            </div>
          </div>
     );
 };
