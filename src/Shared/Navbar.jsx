@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="md:flex hidden">
 
 
-            <div className="dropdown dropdown-bottom">
+            <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className=" m-1    rounded-full p-1">
           <img className="w-10" src={loginReginter} alt="" />
           </div>
