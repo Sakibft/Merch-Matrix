@@ -4,7 +4,6 @@ import { AuthContext } from "../providers/AuthProviders";
 import loginReginter from "../image/login.webp"
 import { IoListOutline, IoLogOut, IoSearch } from "react-icons/io5";
 import { MdManageAccounts } from "react-icons/md";
-import trolly from '../image/trolly.webp'
 import { TbLogin } from "react-icons/tb";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -30,8 +29,6 @@ const Navbar = () => {
             </label>
             {/* right site nab content */}
             <div className="md:flex hidden">
-
-
             <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className=" m-1    rounded-full p-1">
           <img className="w-10" src={loginReginter} alt="" />
@@ -45,10 +42,8 @@ const Navbar = () => {
              <MdManageAccounts className="text-center  w-full text-xl mb-[-10px]" /> 
              <button className="w-full text-center  ">Account</button>
              </div>
-            
             </li>
             <li>
-            
               {user ? (
                 <>
                   <button onClick={handleLogout} className="border rounded-lg text-red-600 border-black flex gap-1 justify-center items-center w-full">
@@ -67,9 +62,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
-          
-             
             </div>
           </div>
         </div>
@@ -98,9 +90,6 @@ const Navbar = () => {
           <IoSearch className="cursor-pointer hover:text-orange-400" />
         </label>
         {/* Shipping trolly */}
-
- 
-
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className=" m-1    rounded-full p-1">
           <img className="w-6" src={loginReginter} alt="" />
