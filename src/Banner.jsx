@@ -3,7 +3,13 @@ import dasktop from "./image/desktop-11-65x65.webp";
 import laptop from "./image/laptop-65x65.webp";
 import keyboard from "./image/keyboard-65x65.webp";
 import router from "./image/router-65x65.webp";
+import useAxiosPublic from "./Hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import AllCategory from "./AllCategory";
 const Banner = () => {
+  const axiosPublic = useAxiosPublic();
+  // console.log(axiosPublic);
+
   // slider
   const [currentSlider, setCurrentSlider] = useState(0);
   const carouselImages = [
@@ -32,41 +38,30 @@ const Banner = () => {
     return () => clearInterval(intervalId);
   }, [nextSlider]);
 
-// filter projects data by category
-const handlePc = (computer) => {
-  console.log(computer);
-  
-} 
+// filter products data by category
+
+// const {data, isLoading, isError, isSuccess } = useQuery({
+//   queryKey:['computerData'],
+//   queryFn: async () => {
+//     const { data } = await axiosPublic.get('/products')
+//     return data ;
+//   }
+// })
+//  console.log(data);
+
+
   return (
     <div className="container mx-auto">
       <div className="flex md:flex-row flex-col-reverse md:pl-2  border-l-2 hover:border-green-300   rounded-xl">
-        {/* left site */}
-
+        {/* left site Category */}
         <div>
           <h1 className="text-center mt-1 md:hidden ">Category</h1>
           <div className="flex justify-center items-center">
             <hr className="w-40 " />
           </div>
-          <div className="flex md:flex-col md:justify-around gap-x-1  md:mr-1 md:m-0 ml-8 mr-8 mt-2 h-full   ">
-            {/* 1 */}
-            <div onClick={()=>handlePc('Computer')} className="border hover:border-green-400 hover:bg-base-200 rounded-xl md:h-28 h-20 md:w-44 w-32  flex justify-center items-center cursor-pointer">
-              <img src={dasktop} alt="" />
-            </div>
-            {/* 2 */}
-            <div className="border hover:border-green-400 hover:bg-base-200 rounded-xl  md:h-28 h-20 md:w-44 w-32 flex justify-center items-center cursor-pointer">
-              <img src={laptop} alt="" />
-            </div>
-            {/* 3 */}
-            <div className="border hover:border-green-400 hover:bg-base-200 rounded-xl  md:h-28 h-20 md:w-44 w-32 flex justify-center items-center cursor-pointer">
-              <img src={keyboard} alt="" />
-            </div>
-            {/* 4 */}
-            <div className="border hover:border-green-400 hover:bg-base-200 rounded-xl  md:h-28 h-20 md:w-44 w-32 flex justify-center items-center cursor-pointer">
-              <img src={router} alt="" />
-            </div>
-          </div>
+          <AllCategory></AllCategory>
         </div>
-        {/* right site */}
+        {/* right site Banner */}
         <div className="flex h-60 w-full md:h-[470px] lg:h-[540px] relative overflow-hidden">
           {/* arrow left */}
           <button

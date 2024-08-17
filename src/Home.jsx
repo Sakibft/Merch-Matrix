@@ -1,11 +1,11 @@
-import React from 'react';
 import Banner from './Banner';
+import AllCategory from './AllCategory';
 
 const Home = () => {
     return (
         <div >
             <Banner></Banner>
-        </div>
+         </div>
     );
 };
 

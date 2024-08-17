@@ -1,0 +1,18 @@
+[
+    {
+        "category":"Computer",
+        "image":"https://i.postimg.cc/XNkbNGh6/desktop-11-65x65.webp"
+    },
+    {
+        "category":"Laptop",
+        "image":"https://i.postimg.cc/ydNFJSPp/laptop-65x65.webp"
+    },
+    {
+        "category":"Keyboard",
+        "image":"https://i.postimg.cc/JzWZNFxk/keyboard-65x65.webp"
+    },
+    {
+        "category":"Router",
+        "image":"https://i.postimg.cc/XJXCN6jT/router-65x65.webp"
+    }
+]
