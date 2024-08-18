@@ -38,17 +38,6 @@ const Banner = () => {
     return () => clearInterval(intervalId);
   }, [nextSlider]);
 
-// filter products data by category
-
-// const {data, isLoading, isError, isSuccess } = useQuery({
-//   queryKey:['computerData'],
-//   queryFn: async () => {
-//     const { data } = await axiosPublic.get('/products')
-//     return data ;
-//   }
-// })
-//  console.log(data);
-
 
   return (
     <div className="container mx-auto">
