@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AllCategory = () => {
 
-const  [categorys,setCategory ] = useState()
+const  [categorys,setCategory ] = useState([])
 
   useEffect(()=>{
         fetch('/public/category.json')
@@ -13,7 +13,7 @@ const  [categorys,setCategory ] = useState()
         })
     },[])
 
-console.log(categorys);
+// console.log(categorys);
     return (
         <div className="flex md:flex-col md:justify-around  gap-x-1  md:mr-1 md:m-0 ml-8 mr-8 mt-2 h-full">
           {

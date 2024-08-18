@@ -1,28 +1,27 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import AllCategory from "./AllCategory";
-import useAxiosPublic from "./Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "./Hooks/useAxiosPublic";
 
-const Category = () => {
-  const axiosPublic = useAxiosPublic();
-  const category = useParams();
-  console.log(category?.category);
+ 
 
-  // filter products data by category
+const AllProducts = () => {
+    
+    const axiosPublic = useAxiosPublic();
 
-  const { data, isLoading, isError, isSuccess } = useQuery({
-    queryKey: ["categoryWiseProductsData"],
-    queryFn: async () => {
-      const { data } = await axiosPublic.get(`/products/${category?.category}`);
-      return data;
-    },
-  });
-  console.log(data);
 
-  return (
-  <div className="bg-gray-100">
-      <div className="container mx-auto grid lg:grid-cols-5 md:grid-cols-3 justify-around gap-2 ">
+    const {data} = useQuery({
+        queryKey:['AllProducts'],
+        queryFn: async () => {
+        const {data} = await axiosPublic.get('/allProducts')
+         return data;
+        }
+    })
+//   console.log(data);
+
+
+
+    return (
+        <div>
+             <div className="container mx-auto grid lg:grid-cols-5 md:grid-cols-3 justify-around gap-2 ">
       {data &&
         data.map((singleProduct) => (
           <div key={singleProduct._id}>
@@ -53,8 +52,8 @@ const Category = () => {
             </div>
         ))}
     </div>
-  </div>
-  );
+        </div>
+    );
 };
 
-export default Category;
+export default AllProducts;
