@@ -4,6 +4,7 @@ import Login from "../Login";
 import Register from "../Register";
 import Home from "../Home";
 import Category from "../Category";
+import Search from "../Search";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:'/category/:category',
         element:<Category></Category>
+      },
+      {
+        path:'/search/:search',
+        element:<Search></Search>
       }
     ],
   },

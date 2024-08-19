@@ -1,17 +1,30 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import loginReginter from "../image/login.webp"
 import { IoListOutline, IoLogOut, IoSearch } from "react-icons/io5";
 import { MdManageAccounts } from "react-icons/md";
 import { TbLogin } from "react-icons/tb";
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   console.log(user);
   // Logout
   const handleLogout = () => {
     logOut();
   };
+  // Search
+  const handleSerch = (e) => {
+e.preventDefault();
+const from = e.target;
+const searchValue = from.search.value;
+ 
+ if (searchValue) {
+  navigate(`/search/${searchValue}`);
+}
+
+  }
   return (
     <div>
       <div className="bg-black">
@@ -23,10 +36,12 @@ const Navbar = () => {
               </Link>
             </div>
             {/* serchbar */}
-            <label className="input input-bordered md:flex items-center hidden  ">
-              <input type="text" placeholder="Search" />
-              <IoSearch className="text-xl font-bold hover:text-orange-500" />
+         <form onSubmit={handleSerch} action="">
+         <label className="input input-bordered md:flex items-center hidden  ">
+              <input name="search" type="text" placeholder="Search" />
+              <button><IoSearch className="text-xl font-bold hover:text-orange-500" /></button>
             </label>
+         </form>
             {/* right site nab content */}
             <div className="md:flex hidden">
             <div className="dropdown dropdown-end">
@@ -85,10 +100,14 @@ const Navbar = () => {
           </ul>
         </div>
 {/* input */}
-        <label className="input  h-6  flex items-center gap-2">
-          <input type="text" placeholder="Search here..." />
-          <IoSearch className="cursor-pointer hover:text-orange-400" />
-        </label>
+      <form onSubmit={handleSerch} action="">
+      <label className="input  h-6  flex items-center gap-2">
+          
+          <input type="text" name="search" placeholder="Search here..." />
+       <button>   <IoSearch className="cursor-pointer hover:text-orange-400" /></button>
+          
+         </label>
+      </form>
         {/* Shipping trolly */}
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className=" m-1    rounded-full p-1">

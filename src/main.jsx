@@ -12,6 +12,10 @@ import {
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  
+   
+
+ <div id="scrollableContainer">
   <React.StrictMode>
         <QueryClientProvider client={queryClient}>
 
@@ -21,4 +25,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </QueryClientProvider>
 
   </React.StrictMode>
+
+ </div>
 );
