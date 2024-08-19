@@ -22,6 +22,7 @@ const searchValue = from.search.value;
  
  if (searchValue) {
   navigate(`/search/${searchValue}`);
+  from.reset();
 }
 
   }
