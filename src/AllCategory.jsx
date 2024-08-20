@@ -19,9 +19,9 @@ const  [categorys,setCategory ] = useState([])
           {
             categorys && categorys.map(category => (
                <Link  key={category.category}  to={`category/${category.category}`}>
-                <div  className="border hover:border-green-400 hover:bg-base-200 rounded-xl md:h-28 h-20 md:w-44 w-32  flex  flex-col justify-center items-center cursor-pointer">
-                <img src={category.image} alt="" />
-                <h1 className='text-sm font-semibold'>{category.category}</h1>
+                <div  className="border hover:border-green-400 hover:bg-base-200 rounded-xl md:h-28 md:w-44 w-20 h-18 flex  flex-col justify-center items-center cursor-pointer">
+                <img className='md:w-20 w-10' src={category.image} alt="" />
+                <h1 className='md:text-sm text-[10px] font-semibold'>{category.category}</h1>
                </div>
                </Link>
             ))
