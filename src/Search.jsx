@@ -14,7 +14,7 @@ const Search = () => {
       return data;
     },
   });
-console.log(data);
+// console.log(data);
   return (
     <div>
        <div className="container mx-auto grid lg:grid-cols-5 md:grid-cols-3 justify-around gap-2 ">
@@ -31,7 +31,7 @@ console.log(data);
                 </div>
                 <button className="rounded-xl bg-[#0095FF] px-3 py-1 font-medium text-white duration-200 hover:bg-[#0095FF]/90">save : {singleProduct?.saveAmount}</button>
             </div>
-            <img width={400} height={400} className="rounded-lg bg-black/40 object-cover" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="card navigate ui" />
+            <img width={400} height={400} className="rounded-lg bg-black/40 object-cover" src={singleProduct?.productImage} alt="card navigate ui" />
         </div>
         <div className="space-y-2 font-semibold">
         <p>{singleProduct?.category}</p>

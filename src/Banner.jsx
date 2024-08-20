@@ -38,7 +38,6 @@ const Banner = () => {
     return () => clearInterval(intervalId);
   }, [nextSlider]);
 
-
   return (
     <div className="container mx-auto">
       <div className="flex md:flex-row flex-col-reverse md:pl-2  border-l-2 hover:border-green-300   rounded-xl">

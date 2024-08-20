@@ -9,7 +9,7 @@ import { TbLogin } from "react-icons/tb";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(user);
+  // console.log(user);
   // Logout
   const handleLogout = () => {
     logOut();
