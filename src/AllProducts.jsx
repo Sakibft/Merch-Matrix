@@ -10,7 +10,7 @@ const AllProducts = () => {
       return data;
     },
   });
-  //   console.log(data);
+    console.log(data);
 
   return (
     <div>
