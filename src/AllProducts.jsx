@@ -1,23 +1,51 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./Hooks/useAxiosPublic";
+import { useState } from "react";
 
 const AllProducts = () => {
   const axiosPublic = useAxiosPublic();
-  const { data } = useQuery({ 
-    queryKey: ["AllProducts"],
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["AllProducts", currentPage, itemsPerPage],
     queryFn: async () => {
-      const { data } = await axiosPublic.get("/allProducts");
+      const { data } = await axiosPublic.get(
+        `/allProducts?page=${currentPage}&size=${itemsPerPage}`
+      );
       return data;
     },
   });
-    // console.log(data);
+  if (isLoading) return <p>Loading...</p>;
+  if (isError || !data) return <p>Error fetching data</p>;
 
+  // Get the total number of products and calculate the number of pages
+  const totalProducts = data.totalProducts || 0;
+  const numberOfPages = Math.ceil(totalProducts / itemsPerPage);
+  console.log(numberOfPages);
+  const pages = [...Array(numberOfPages).keys()];
+
+  const handleItemsPerPage = (e) => {
+    const val = parseInt(e.target.value);
+    setItemsPerPage(val);
+    setCurrentPage(0);
+  };
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const handleNext = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
   return (
     <div>
       <h1 className="font-bold text-4xl text-center mt-4 mb-4">Collections</h1>
       <div className="container mx-auto grid lg:grid-cols-5 md:grid-cols-3 justify-around gap-2 ">
         {data &&
-          data.map((singleProduct) => (
+          data.allProducts.map((singleProduct) => (
             <div key={singleProduct._id}>
               {/* card */}
               <div className="w-full max-w-[340px] space-y-3 rounded-xl bg-white p-4 shadow-lg dark:bg-[#18181B]">
@@ -66,6 +94,29 @@ const AllProducts = () => {
               </div>
             </div>
           ))}
+      </div>
+      <div className="  mt-10 mb-10 container mx-auto flex justify-center items-center gap-x-4">
+        <button onClick={handlePrev}>Prev</button>
+
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={
+              currentPage === page
+                ? "border bg-green-400 rounded-lg p-2 text-white"
+                : "rounded-lg p-2 border border-green-400"
+            }
+          >
+            {page}
+          </button>
+        ))}
+        <button onClick={handleNext}>Next</button>
+        <select name="" id="" onChange={handleItemsPerPage}>
+          <option value="10">10</option>
+          <option value="5">5</option>
+          <option value="15">15</option>
+        </select>
       </div>
     </div>
   );
