@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const AllProducts = () => {
   const axiosPublic = useAxiosPublic();
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(15);
   const [currentPage, setCurrentPage] = useState(0);
 
   const { data, isLoading, isError } = useQuery({
@@ -25,11 +25,13 @@ const AllProducts = () => {
   console.log(numberOfPages);
   const pages = [...Array(numberOfPages).keys()];
 
-  const handleItemsPerPage = (e) => {
-    const val = parseInt(e.target.value);
-    setItemsPerPage(val);
-    setCurrentPage(0);
-  };
+  // const handleItemsPerPage = (e) => {
+  //   const val = parseInt(e.target.value);
+  //   setItemsPerPage(val);
+  //   setCurrentPage(0);
+  // };
+
+  
   const handlePrev = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
