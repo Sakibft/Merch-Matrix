@@ -40,7 +40,7 @@ const Banner = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="flex md:flex-row flex-col-reverse md:pl-2  border-l-2 hover:border-green-300   rounded-xl">
+      <div className="flex md:flex-row flex-col-reverse md:pl-2  border-l-2 hover:border-black hover:duration-1000   rounded-xl">
         {/* left site Category */}
         <div>
           <h1 className="text-center mt-1 md:hidden ">Category</h1>
