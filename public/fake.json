@@ -416,5 +416,60 @@
     "category": "Keyboard",
     "ratings": 4.9,
     "creationDate": "2024-01-10T12:30:00Z"
+  },
+  {
+    "productName": "Dell XPS 13",
+    "productImage": "https://i.postimg.cc/pdHM6fd9/57k.jpg",
+    "description": "A high-performance ultrabook with a sleek design and powerful features.",
+    "regularPrice": 115000,
+    "specialPrice": 109999,
+    "saveAmount": 5001,
+    "category": "Computer",
+    "ratings": 4.8,
+    "creationDate": "2024-01-10T12:30:00Z"
+  },
+  {
+    "productName": "Tenda N301",
+    "productImage": "https://i.postimg.cc/GpWKQK3N/images-3.jpg",
+    "description": "A budget wireless N router with easy setup and reliable performance.",
+    "regularPrice": 1500,
+    "specialPrice": 1300,
+    "saveAmount": 200,
+    "category": "Router",
+    "ratings": 3.9,
+    "creationDate": "2024-04-10T11:45:00Z"
+  },
+  {
+    "productName": "Dell XPS 13",
+    "productImage": "https://i.postimg.cc/pdHM6fd9/57k.jpg",
+    "description": "A high-performance ultrabook with a sleek design and powerful features.",
+    "regularPrice": 115000,
+    "specialPrice": 109999,
+    "saveAmount": 5001,
+    "category": "Computer",
+    "ratings": 4.8,
+    "creationDate": "2024-01-10T12:30:00Z"
+  },
+  {
+    "productName": "SteelSeries Apex Pro",
+    "productImage": "https://i.postimg.cc/ryPXkXm2/apex-pro-tkl-wl-img-buy-01-png-1920x1080-crop-fit-optimize-subsampling-2.png",
+    "description": "A mechanical keyboard with adjustable actuation switches and customizable RGB lighting.",
+    "regularPrice": 13999,
+    "specialPrice": 12999,
+    "saveAmount": 1000,
+    "category": "Keyboard",
+    "ratings": 4.8,
+    "creationDate": "2024-04-10T11:45:00Z"
+  },
+  {
+    "productName": "Dell XPS 13",
+    "productImage": "https://i.postimg.cc/8k33YRK1/dell-3421-0.jpg",
+    "description": "A high-performance ultrabook with a sleek design and powerful features.",
+    "regularPrice": 109999,
+    "specialPrice": 99999,
+    "saveAmount": 10000,
+    "category": "Laptop",
+    "ratings": 4.8,
+    "creationDate": "2024-01-10T12:30:00Z"
   }
 ]
