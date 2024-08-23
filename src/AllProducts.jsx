@@ -16,6 +16,7 @@ const AllProducts = () => {
       return data;
     },
   });
+  // console.log(data);
   if (isLoading) return <p>Loading...</p>;
   if (isError || !data) return <p>Error fetching data</p>;
 
@@ -47,7 +48,7 @@ const AllProducts = () => {
       <h1 className="font-bold text-4xl text-center mt-4 mb-4">Collections</h1>
       <div className="container mx-auto grid lg:grid-cols-5 md:grid-cols-3 justify-around gap-2 ">
         {data &&
-          data.allProducts.map((singleProduct) => (
+          data.paginationProducts.map((singleProduct) => (
             <div key={singleProduct._id}>
               {/* card */}
               <div className="w-full max-w-[340px] space-y-3 rounded-xl bg-white p-2 shadow-lg dark:bg-[#18181B] border hover:border-1 hover:border-black ">

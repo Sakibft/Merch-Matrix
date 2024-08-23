@@ -7,24 +7,21 @@ import AuthProviders from "./providers/AuthProviders";
 import {
   QueryClient,
   QueryClientProvider,
-} from '@tanstack/react-query'
+} from '@tanstack/react-query';
+
 // Create a client
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   
-   
-
- <div id="scrollableContainer">
+  <div id="scrollableContainer" className="overflow-hidden">
   <React.StrictMode>
-        <QueryClientProvider client={queryClient}>
-
-    <AuthProviders>
-      <RouterProvider router={router} />
-    </AuthProviders>
+    <QueryClientProvider client={queryClient}>
+      <AuthProviders>
+        <RouterProvider router={router} />
+      </AuthProviders>
     </QueryClientProvider>
-
   </React.StrictMode>
+</div>
 
- </div>
 );
