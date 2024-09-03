@@ -1,7 +1,9 @@
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import useAxiosPublic from "./Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { Rating } from '@smastrom/react-rating'
 
+import '@smastrom/react-rating/style.css'
 const BestSellsProducts = () => {
   const axiosPublic = useAxiosPublic();
   const { data } = useQuery({
@@ -12,22 +14,20 @@ const BestSellsProducts = () => {
       return data;
     },
   });
-
+ 
   return (
     <div>
       <h1 className="font-bold text-2xl text-center mt-8 mb-2">
         Best Sells Products{" "}
       </h1 >
-     <div>
-     <hr  className="border-red-500 w-20 flex justify-center items-center"/>
-     </div>
+    
       <div>
-        <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 justify-around gap-3 mb-10 ">
+        <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2  gap-3 mb-10 ">
           {data &&
             data.allProducts.slice(6, 18).map((singleProduct) => (
               <div key={singleProduct._id}>
                 {/* card */}
-                <div className="md:flex  md:justify-center items-center bg-base-100 shadow-xl border-2 md:h-40 cursor-pointer">
+                <div className="md:flex  md:justify-center  md:items-center bg-base-100 shadow-xl border-2 md:h-40 cursor-pointer">
                   <figure>
                     <img
                       className="md:h-36 md:w-48 flex justify-center items-center"
@@ -35,8 +35,8 @@ const BestSellsProducts = () => {
                       alt="Movie"
                     />
                   </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{singleProduct?.productName?.slice(0, 24)}.</h2>
+                  <div className="md:card-body">
+                    <h2 className="md:card-title">{singleProduct?.productName?.slice(0, 24)}.</h2>
                     <p>
                       <p>{singleProduct?.description?.slice(0, 45)}...</p>
                     </p>
@@ -48,35 +48,12 @@ const BestSellsProducts = () => {
                       </p> 
                       <del className="flex">{singleProduct?.regularPrice} <FaBangladeshiTakaSign className="text-sm mt-1" /> </del>
                      </div>
-                    <div className="rating">
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star"
-                      />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star"
-                        defaultChecked
-                      />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star"
-                      />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star"
-                      />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star"
-                      />
-                    </div>
-                    <div className="card-actions justify-end"></div>
+                   {/* rating */}
+                   <Rating
+      style={{ maxWidth: 80 }}
+      value={3}
+      readOnly
+    />
                   </div>
                 </div>
               </div>
