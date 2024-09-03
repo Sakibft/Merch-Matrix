@@ -1,9 +1,9 @@
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import useAxiosPublic from "./Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-import { Rating } from '@smastrom/react-rating'
+import { Rating } from "@smastrom/react-rating";
 
-import '@smastrom/react-rating/style.css'
+import "@smastrom/react-rating/style.css";
 const BestSellsProducts = () => {
   const axiosPublic = useAxiosPublic();
   const { data } = useQuery({
@@ -14,13 +14,13 @@ const BestSellsProducts = () => {
       return data;
     },
   });
- 
+
   return (
     <div>
       <h1 className="font-bold text-2xl text-center mt-8 mb-2">
         Best Sells Products{" "}
-      </h1 >
-    
+      </h1>
+
       <div>
         <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2  gap-3 mb-10 ">
           {data &&
@@ -36,24 +36,25 @@ const BestSellsProducts = () => {
                     />
                   </figure>
                   <div className="md:card-body">
-                    <h2 className="md:card-title">{singleProduct?.productName?.slice(0, 24)}.</h2>
+                    <h2 className="md:card-title">
+                      {singleProduct?.productName?.slice(0, 24)}.
+                    </h2>
                     <p>
                       <p>{singleProduct?.description?.slice(0, 45)}...</p>
                     </p>
                     {/* price */}
-                     <div className="flex w-36">
-                     <p className="flex text-orange-500">{singleProduct?.specialPrice} <FaBangladeshiTakaSign className="text-sm mt-1" />
-
-                      
-                      </p> 
-                      <del className="flex">{singleProduct?.regularPrice} <FaBangladeshiTakaSign className="text-sm mt-1" /> </del>
-                     </div>
-                   {/* rating */}
-                   <Rating
-      style={{ maxWidth: 80 }}
-      value={3}
-      readOnly
-    />
+                    <div className="flex w-36">
+                      <p className="flex text-orange-500">
+                        {singleProduct?.specialPrice}{" "}
+                        <FaBangladeshiTakaSign className="text-sm mt-1" />
+                      </p>
+                      <del className="flex">
+                        {singleProduct?.regularPrice}{" "}
+                        <FaBangladeshiTakaSign className="text-sm mt-1" />{" "}
+                      </del>
+                    </div>
+                    {/* rating */}
+                    <Rating style={{ maxWidth: 80 }} value={3} readOnly />
                   </div>
                 </div>
               </div>
