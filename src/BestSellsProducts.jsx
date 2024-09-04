@@ -17,10 +17,13 @@ const BestSellsProducts = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-2xl text-center mt-8 mb-2">
-        Best Sells Products{" "}
+    <div className="flex flex-col justify-center items-center mb-5">
+    <h1 className="font-bold text-2xl text-center mt-8">
+        Best Sells Products
       </h1>
+<hr  className="border-2 w-60 border-black"/>
 
+    </div>
       <div>
         <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2  gap-3 mb-10 ">
           {data &&

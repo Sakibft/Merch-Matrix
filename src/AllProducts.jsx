@@ -45,7 +45,13 @@ const AllProducts = () => {
   };
   return (
     <div>
-      <h1 className="font-bold text-4xl text-center mt-4 mb-4">Collections</h1>
+      <div className="flex flex-col justify-center items-center mb-5">
+    <h1 className="font-bold text-2xl text-center mt-8">
+        All Collection
+      </h1>
+<hr  className="border-2 w-44 border-black"/>
+
+    </div>
       <div className="container mx-auto grid lg:grid-cols-5 md:grid-cols-3 justify-around gap-2 ">
         {data &&
           data.paginationProducts.map((singleProduct) => (

@@ -11,7 +11,7 @@ const Layout = () => {
           
           <Navbar></Navbar>
           
-            <div>
+            <div className="min-h-[calc(100vh-310px)] ">
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
